@@ -3,7 +3,7 @@
 #
 
 
-from PyQt5.QtCore import *
+from PyQt5.QtCore import pyqtSignal, QTimer, Qt
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QPushButton,QLabel
 import random
