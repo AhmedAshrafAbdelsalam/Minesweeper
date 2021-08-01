@@ -34,7 +34,7 @@ class Ui_MainWindow():
     
     def setupUi(self, MainWindow):
         'Setting up starting UI elements for user to start interacting with the game'
-
+        
         MainWindow.setObjectName("MainWindow")
         MainWindow.setWindowTitle("Minesweeper")
         
@@ -118,7 +118,7 @@ class Ui_MainWindow():
                 self.box[i][j].flag.connect(self.changeMineConuter)
 
         self.time = 0
-        self.timer.start(1000)
+        self.timer.stop()
         self.changeUI()
 
     def createNewGame(self):
@@ -163,6 +163,8 @@ class Ui_MainWindow():
                     self.tile[i+x][j+y].setStyleSheet(s)
         self.checked = []
         TileLabel.isFirstTile = False
+        self.timer.start(1000)
+
 
     def getAllVoids(self,a,b):
         'Function to open all tiles adjacent to the empty pressed tile recursively'
